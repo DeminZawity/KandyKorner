@@ -1,0 +1,25 @@
+.product {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid rgb(60, 42, 20);
+  background-color: rgb(215, 196, 174);
+  border-radius: 5px;
+  padding: 20px;
+  height: 7vh;
+  width: 20vw;
+  justify-content: center;
+  align-items: center;
+  margin: 20px 0px;
+}
+
+.productBotton {
+  background-color: rgb(215, 196, 174);
+  border: 1px solid rgb(60, 42, 20);
+  border-radius: 5px;
+  height: 4vh;
+  width: 8vw;
+}
+
+.all {
+  margin-left: 20px;
+}
