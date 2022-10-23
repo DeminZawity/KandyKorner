@@ -1,0 +1,13 @@
+.location {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid rgb(60, 42, 20);
+  background-color: rgb(215, 196, 174);
+  border-radius: 5px;
+  padding: 10px;
+  height: 7vh;
+  width: 20vw;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 20px;
+}
