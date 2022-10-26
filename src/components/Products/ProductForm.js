@@ -2,19 +2,16 @@ import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
 export const ProductForm = () => {
-  /*
-  TODO: Add the correct default properties to the
-  initial state object
-  */
+  const navigate = useNavigate();
+
   const [products, setProducts] = useState({
     name: "",
-    price: [],
-    type: [],
+    price: "",
+    type: "",
   });
 
-  const navigate = useNavigate();
-  const localKandyUser = localStorage.getItem("kandy_user");
-  const kandyUserObject = JSON.parse(localKandyUser);
+  // const localKandyUser = localStorage.getItem("kandy_user");
+  // const kandyUserObject = JSON.parse(localKandyUser);
 
   const addingNewProduct = (event) => {
     event.preventDefault();
@@ -25,7 +22,7 @@ export const ProductForm = () => {
       pricePerUnit: parseInt(products.price),
     };
 
-    return fetch(`http://localhost:8088/products`, {
+    return fetch(`http://localhost:8088/products?_expand=productTypes`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -76,6 +73,18 @@ export const ProductForm = () => {
             }}
           />
         </div>
+      </fieldset>
+      <fieldset>
+        <input
+          type="number"
+          name="productTypesId"
+          value={products.type.id}
+          onChange={(evt) => {
+            const copy = { ...products };
+            copy.type = evt.target.value;
+            setProducts(copy);
+          }}
+        />
       </fieldset>
       <button onClick={(clickEvent) => addingNewProduct(clickEvent)} className="btn btn-primary">
         Submit Ticket

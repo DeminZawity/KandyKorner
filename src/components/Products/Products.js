@@ -19,23 +19,6 @@ export const ProductList = () => {
       });
   }, []);
 
-  //   <div class="box mood">
-  //   <select name="moodForTheDay" id="moodInput">
-  //     <option value=""></option>
-  //     <option value="Happy">Happy</option>
-  //     <option value="Fine">Fine</option>
-  //     <option value="Sad">Sad</option>
-  //   </select>
-  // </div>
-  const filterOptions = (event) => {
-    // console.log(event.target.value);
-    console.log(AllProducts);
-
-    var filtered = AllProducts.filter((obj) => obj.productTypes.name == event.target.value);
-
-    console.log(filtered);
-  };
-
   return (
     <>
       <h3>Our Products</h3>
